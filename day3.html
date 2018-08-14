@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vanillaJS Day3 - 입력받은 숫자의 합</title>
+</head>
+<body>
+	<div id="input_area1">
+		<input type="text" id="input0">
+		<button type="button" id="btn0">입력</button>
+	</div>
+	<div id="input_area2">
+		<input type="text" id="input1">
+		<button type="button" id="btn1">입력</button>
+	</div>
+	<div id="input_area3">
+		<input type="text" id="input2">
+		<button type="button" id="btn2">입력</button>
+	</div>
+
+	<script type="text/javascript">
+		function inputNumber(tag){
+			var tag = document.querySelector(tag)
+			var input = tag.querySelector('input');
+			var btn = tag.querySelector('button');
+			var result;
+
+			btn.addEventListener('click', function(){
+				var val = input.value;
+				var num = 0;
+
+				val = val.replace(/[^0-9]/g, "");
+				for(var i=0; i<val.length; i++){
+					num += Number(val[i]);
+				}
+				result = num;
+				console.log('입력받은 숫자의 합은' + result);
+			})
+		}
+
+		inputNumber('#input_area1')
+		inputNumber('#input_area2')
+		inputNumber('#input_area3')
+	</script>
+</body>
+</html>

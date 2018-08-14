@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vanillaJS Day2 - 입력받은 숫자 정렬</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = new Array();
+		for(i=0; i<10; i++){
+			number = Number ( prompt('숫자를 입력하세요') );
+			arr[i] = number;
+		}
+		document.write('입력된 값은'+ arr + ' 입니다');
+		document.write('<br>');
+
+		arr.sort(function(a, b) {
+		    return a - b;
+		});
+		document.write('오름차순 정렬 :' + arr);
+		document.write('<br>');
+
+		arr.sort(function(a, b) {
+			return b - a;
+		});
+		document.write('내림차순 정렬 :' + arr);
+	</script>
+</body>
+</html>
