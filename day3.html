@@ -17,13 +17,16 @@
 		<input type="text" id="input2">
 		<button type="button" id="btn2">입력</button>
 	</div>
+	<button type="button" id="allBtn">전체합계</button>
 
 	<script type="text/javascript">
+		var result = 0;
+		var allBtn = document.querySelector('#allBtn');
+
 		function inputNumber(tag){
 			var tag = document.querySelector(tag)
 			var input = tag.querySelector('input');
 			var btn = tag.querySelector('button');
-			var result;
 
 			btn.addEventListener('click', function(){
 				var val = input.value;
@@ -31,12 +34,20 @@
 
 				val = val.replace(/[^0-9]/g, "");
 				for(var i=0; i<val.length; i++){
-					num += Number(val[i]);
+					num = num + Number(val[i]);
 				}
-				result = num;
-				console.log('입력받은 숫자의 합은' + result);
+				result += num;
+				console.log('입력받은 숫자의 합은' + num);
+
+				btn.disabled = 'true';
 			})
 		}
+
+		allBtn.addEventListener('click', function(){
+
+			console.log('입력받은 숫자의 합은' + result);
+
+		})
 
 		inputNumber('#input_area1')
 		inputNumber('#input_area2')

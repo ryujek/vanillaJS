@@ -10,8 +10,19 @@
 	<script type="text/javascript">
 		var inputNum = prompt('숫자를 입력하세요');
 
-		function solution(num){
-			var save = num[num.length-1];
+		function solution(num, count){
+			count = 1;
+			var save = Number( num[num.length-count] );
+			count++;
+			console.log( save );
+			save = save + Number( num[num.length-count] );
+			count++;
+			console.log( save );
+			save = save + Number( num[num.length-count] );
+			count++;
+			console.log( save );
+			save = save + Number( num[num.length-count] );
+			count++;
 			console.log( save );
 		}
 
