@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vanillaJS Day4 - 입력받은 숫자의 약수의 합</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		var inputNum = prompt('숫자를 입력하세요');
+		var save = 0;
+		var temp = 0;
+		function solution(num){
+			if(temp >= num){
+				return;
+			}
+			if(save < num){
+				temp++;
+			}
+			console.log(temp);
+			solution(num);
+
+			if(num%temp == 0){
+				save += temp;
+			}
+			// for(i=0; i<=num; i++){
+			// 	if(num%i == 0){
+			// 		save += i;
+			// 	}
+			// }
+			// return save;
+		}
+		solution(inputNum);
+
+		// document.write('입력받은 값은 ' + inputNum + '이 값의 약수의 합은 ' + save);
+	</script>
+</body>
+</html>
