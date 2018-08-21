@@ -9,24 +9,23 @@
 
 	<script type="text/javascript">
 		var inputNum = prompt('숫자를 입력하세요');
+		var count = 1;
+		var save = Number( inputNum[inputNum.length-count] );
 
-		function solution(num, count){
-			count = 1;
-			var save = Number( num[num.length-count] );
+		function solution(num = save){
+			if(num.length-count <= 0){
+				return
+			}
+
 			count++;
-			console.log( save );
 			save = save + Number( num[num.length-count] );
-			count++;
-			console.log( save );
-			save = save + Number( num[num.length-count] );
-			count++;
-			console.log( save );
-			save = save + Number( num[num.length-count] );
-			count++;
-			console.log( save );
+			solution(num);
+
+			return save;
 		}
-
 		solution(inputNum);
+
+		document.write('입력된 숫자는 : ' + inputNum + ', 입력된 숫자의 합은 : ' + save);
 	</script>
 </body>
 </html>
