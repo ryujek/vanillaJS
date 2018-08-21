@@ -10,16 +10,16 @@
 	<script type="text/javascript">
 		var inputNum = prompt('숫자를 입력하세요');
 		var count = 1;
-		var save = Number( inputNum[inputNum.length-count] );
+		var save = Number( inputNum[inputNum.length-count] ); //마지막숫자 담기
 
-		function solution(num = save){
+		function solution(num){
 			if(num.length-count <= 0){
 				return
 			}
 
-			count++;
-			save = save + Number( num[num.length-count] );
-			solution(num);
+			count++; //카운트 +1
+			save = save + Number( num[num.length-count] ); //마지막숫자에 마지막 다음숫자 더하기
+			solution(num); //함수 다시실행
 
 			return save;
 		}
