@@ -6,34 +6,45 @@
 </head>
 <body>
 
-
 	<script type="text/javascript">
 		var inputNum = prompt('숫자를 입력하세요');
-		var save = 0;
 		var temp = 0;
+		var save = 0;
+
 		function solution(num){
 			if(temp >= num){
 				return;
 			}
-			if(save < num){
+			if(0 < num){
 				temp++;
+				if(num%temp == 0){
+					save += temp;
+				}
 			}
-			console.log(temp);
-			solution(num);
+			console.log(save);
 
-			if(num%temp == 0){
-				save += temp;
-			}
-			// for(i=0; i<=num; i++){
-			// 	if(num%i == 0){
-			// 		save += i;
-			// 	}
-			// }
-			// return save;
+			solution(num);
+			return save;
 		}
+
+//		function solution(num){
+//			if(temp >= num){
+//				return;
+//			}
+//			if(num%temp == 0){
+//				save += temp;
+//			}
+//			 for(i=0; i<=num; i++){
+//			 	if(num%i == 0){
+//			 		save += i;
+//			 	}
+//			 }
+//			 return save;
+//		}
+
 		solution(inputNum);
 
-		// document.write('입력받은 값은 ' + inputNum + '이 값의 약수의 합은 ' + save);
+		document.write('입력받은 값은 ' + inputNum + '이 값의 약수의 합은 ' + save);
 	</script>
 </body>
 </html>
