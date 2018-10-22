@@ -8,7 +8,7 @@
 
 
 	<script type="text/javascript">
-		var inputNum = prompt('숫자를 입력하세요');
+		//var inputNum = prompt('숫자를 입력하세요');
 		var save = 0;
 		var temp = 0;
 		function solution(num){
@@ -31,7 +31,29 @@
 			// }
 			// return save;
 		}
-		solution(inputNum);
+		//solution(inputNum);
+
+
+
+		function factory(x, num) {
+			var sum = 0;
+
+			if( x <= num ) {
+				if(num%x == 0 ) {
+
+					sum = factory(x+1, num);
+					return sum + x;
+				}
+
+				sum = factory(x+1, num);
+				return sum;
+			}
+
+			 return sum;
+		}
+
+		console.log('sum', factory(1, 12));
+
 
 		// document.write('입력받은 값은 ' + inputNum + '이 값의 약수의 합은 ' + save);
 	</script>
