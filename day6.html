@@ -11,29 +11,20 @@
 		//행렬덧셈
 		var arrA = [[1,2],[2,3]];
 		var arrB = [[3,4],[5,6]];
+		var result = [];
 
 		function sumMix(arr1, arr2){
 			for(i=0; i<arr1.length; i++){
-			  console.log(arr1[i]);
+				result[i] = [];
+
+				for(j=0; j<arr1[i].length; j++){
+					result[i][j] = arr1[i][j] + arr2[i][j];
+					console.log(result[i][j]);
+				}
 			}
+			return result;
 		}
 		sumMix(arrA, arrB);
-
-
-
-//		function sumMatrix(A,B){
-//			var answer = Array();
-//			for(var i = 0; i < A.length; i++){
-//				answer[i] = [];
-//					for(var j = 0; j < A[i].length; j++){
-//						answer[i][j] = A[i][j] + B[i][j];
-//					}
-//				}
-//			return answer;
-//		}
-
-		// 아래는 테스트로 출력해 보기 위한 코드입니다.
-//		console.log(sumMatrix([[1,2], [2,3]], [[3,4],[5,6]]))
 	</script>
 </body>
 </html>
