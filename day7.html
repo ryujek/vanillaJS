@@ -14,31 +14,34 @@
 		var result = [];
 
 		function multiple(arr1, arr2){
+      document.write('<div>첫번째 배열 : ' + arr1 + '<br/>두번째 배열 : ' + arr2 + '</div>');
+      document.write('<br/>********<br/>');
+
 			for(i=0; i<arr1.length; i++){
 				result[i] = [];
 
 				for(j=0; j<arr2.length; j++){
 					result[i][j] = arr1[i][j] * arr2[j];
-					console.log(result[i][j]);
 				}
+        document.write('<div>행렬 곱셈의 값 : ' + result[i] + '</div>');
 			}
 			return result;
 		}
 
 		function sum(arr){
 		  for(i=0; i<arr.length; i++){
-		    sumText = [];
+		    var sumText;
+
 		    for(j=0; j<arr[i].length; j++){
-		      var sum2 = arr[i][j] + arr[i][j]
-          console.log(arr[i][j]);
+          sumText = arr[i][j] + arr[i+1][j];
+          document.write('<div>행렬 곱셈한 값의 덧셈의 값 : ' + sumText + '</div>');
 		    }
-		    console.log(sumText)
 		  }
-		  return sumText;
 		}
 
-    multiple(arrA, arrB);
-		sum(result);
+    multiple( arrA, arrB );
+    document.write('<br/>********<br/>');
+    sum( result );
 
 	</script>
 </body>
