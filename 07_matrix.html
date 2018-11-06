@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<title>[vanilla JS] 합계 :: 행렬의 합</title>
+	<style type="text/css">
+		body{ margin:0; padding: 50px 200px; font-family: NanumSquare;font-size:16px;line-height:1.5}
+		strong{font-size:30px;}
+		.blind{color:#fff}
+		em,i{font-size:9px;letter-spacing:-1;margin-left:-4px}
+		em{color:#999}
+		i{color:#ddd}
+	</style>
+</head>
+
+<body>
+
+	<script>
+		//행렬의 덧셈
+		var arr1 = [[1,2,5],[3,4,6],[1,3,5]];
+		var arr2 = [[5,2],[6,4],[1,0]];
+		var result = [];
+
+        function sum(x, y) {
+            return x + y;
+        }
+
+        function multi(x, y) {
+            return x * y;
+        }
+
+		function matrix(arr1, arr2){
+            for(var i=0; i<arr1.length; i++) {
+                for(var j=0; j<arr1[i].length; j++) {
+                    console.log('[',i,']', '[',j,']', ':', arr1[i][j]);
+                    for(c=0; c<arr2[j].length; c++) {
+
+                        if(result[i] === undefined) {
+                            result[i] = [];
+                        }
+
+                        if(result[i][c] === undefined) {
+                            result[i].push(0);
+                        }
+
+                        console.log('arr2[',j,']','[',c,']', arr2[j][c]);
+                        console.log('******', result[i][c], multi(arr1[i][j], arr2[j][c]));
+                        result[i][c] = sum(result[i][c] , (multi(arr1[i][j], arr2[j][c])));
+                    }
+                }
+                console.log('----------------');
+            }
+
+
+            for(var i=0; i<result.length; i++) {
+                for(var j=0; j<result[i].length; j++) {
+                    console.log('result[',i,'][',j,'] :',result[i][j])
+                }
+            }
+
+
+
+			/* for( var outer = 0; outer < arr1.length; outer++){
+				result[outer] = [];
+				for( var inner = 0; inner < arr1[outer].length; inner++){
+					for( var multi = 0; multi < arr2.length; multi++){
+						result[outer][inner] = arr1[outer][inner] * arr2[multi];
+
+                        result[index_c][index_r] = ;
+
+
+						var txt = result[outer][inner];
+						console.log(txt);
+						//sum(txt);
+					}
+				}
+			}
+			return result;*/
+		}
+		/*function sum(txt){
+			//console.log(txt);
+		}*/
+		matrix(arr1, arr2);
+		/*document.write("Array 01 : "+arr1+"<br>");
+		document.write("Array 02 : "+arr2+"<br>");
+		document.write("합계 : "+result+"<br>");*/
+	</script>
+
+
+</body>
+</html>
