@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vanillaJS Day8 - 계산기</title>
+	<style type="text/css">
+		.calculator {
+			overflow: hidden;
+			width: 200px;
+		}
+		.calculator_cell {
+			float: left;
+			padding: 5px;
+			width: 25%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.calculator_cell button {
+			width: 100%;
+			height: 25px;
+			background-color: transparent;
+			font-size: 15px;
+		}
+		.input_box {
+			height: 30px;
+			margin-bottom: 5px;
+			border: 1px solid #0000ff;
+		}
+	</style>
+</head>
+<body>
+	<div class="calculator">
+		<div class="input_box"></div>
+		<div class="calculator_cell"><button type="button" class="num7">7</button></div>
+		<div class="calculator_cell"><button type="button" class="num8">8</button></div>
+		<div class="calculator_cell"><button type="button" class="num9">9</button></div>
+		<div class="calculator_cell"><button type="button" class="division">÷</button></div>
+		<div class="calculator_cell"><button type="button" class="num4">4</button></div>
+		<div class="calculator_cell"><button type="button" class="num5">5</button></div>
+		<div class="calculator_cell"><button type="button" class="num6">6</button></div>
+		<div class="calculator_cell"><button type="button" class="multiply">×</button></div>
+		<div class="calculator_cell"><button type="button" class="num1">1</button></div>
+		<div class="calculator_cell"><button type="button" class="num2">2</button></div>
+		<div class="calculator_cell"><button type="button" class="num3">3</button></div>
+		<div class="calculator_cell"><button type="button" class="minus">-</button></div>
+		<div class="calculator_cell"><button type="button" class="num0">0</button></div>
+		<div class="calculator_cell"><button type="button" class="dot">.</button></div>
+		<div class="calculator_cell"><button type="button" class="equals">=</button></div>
+		<div class="calculator_cell"><button type="button" class="plus">+</button></div>
+	</div>
+
+	<script type="text/javascript">
+    var input_box = document.querySelector('.input_box');
+    var calculator = document.querySelector('.calculator');
+    var num0 = calculator.querySelector('.num0');
+    var num1 = calculator.querySelector('.num1');
+    var num2 = calculator.querySelector('.num2');
+    var num3 = calculator.querySelector('.num3');
+    var num4 = calculator.querySelector('.num4');
+    var num5 = calculator.querySelector('.num5');
+    var num6 = calculator.querySelector('.num6');
+    var num7 = calculator.querySelector('.num7');
+    var num8 = calculator.querySelector('.num8');
+    var num9 = calculator.querySelector('.num9');
+    var division = calculator.querySelector('division');
+    var multiply = calculator.querySelector('multiply');
+    var minus = calculator.querySelector('.minus');
+    var plus = calculator.querySelector('.plus');
+    var equals = calculator.querySelector('.equals');
+    var dot = calculator.querySelector('.dot');
+
+    function clickButton(btn){
+      btn.addEventListener('click', function(){
+        var val = btn.innerHTML;
+        input_box.innerHTML = val;
+      })
+    }
+
+    clickButton(num0);
+    clickButton(num1);
+    clickButton(num2);
+    clickButton(num3);
+    clickButton(num4);
+    clickButton(num5);
+    clickButton(num6);
+    clickButton(num7);
+    clickButton(num8);
+    clickButton(num9);
+
+	</script>
+</body>
+</html>
