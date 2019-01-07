@@ -10,7 +10,7 @@
 	<script type="text/javascript">
 		//행렬곱셈
 		var arrA = [[2,3],[4,5]];
-		var arrB = [6,7];
+		var arrB = [[6],[7]];
 		var result = [];
 
 		function multiple(arr1, arr2){
@@ -33,7 +33,7 @@
 		    var sumText;
 
 		    for(j=0; j<arr[i].length; j++){
-          sumText = arr[i][j] + arr[i+1][j];
+          sumText = arr[i][j] + arr[i][j];
           document.write('<div>행렬 곱셈한 값의 덧셈의 값 : ' + sumText + '</div>');
 		    }
 		  }
